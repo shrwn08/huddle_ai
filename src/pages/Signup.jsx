@@ -85,11 +85,11 @@ function Signup() {
         onSubmit={handleSubmit}
       >
         <div className=" w-full h-auto bg-[#EFEFEF] shadow-md flex justify-center items-center flex-col  rounded-2xl py-8 sm:w-3/5">
-          <div className="flex justify-center items-center">
+          <Link to="/" className="flex justify-center items-center">
             <img src={Logo} alt="logo" className="w-20" />
             <span className="text-5xl font-bold text-[#0291fa]">Huddle </span>
             <span className="text-5xl font-bold text-[#62c6aa]"> AI</span>
-          </div>
+          </Link>
           <p className="text-[#1C1D21] font-600 text-3xl font-semibold">
             Create an account
           </p>
