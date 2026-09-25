@@ -1,6 +1,7 @@
 import React from 'react'
 import Bot from "../../assets/chatbot.png"
 import LeftChat from './LeftChat'
+import LeftFeatureCard from './LeftFeatureCard'
 
 function InfiniteCoverFlow() {
   return (
@@ -11,6 +12,7 @@ function InfiniteCoverFlow() {
             </div>
             <div>
                 <LeftChat />
+                <LeftFeatureCard />
             </div>
     </div>
   )
