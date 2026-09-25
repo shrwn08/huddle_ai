@@ -1,0 +1,31 @@
+.cover-flow-wrapper {
+  width: 91.666667%; 
+  min-width: 0;
+}
+
+.cover-flow-bot-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-flow-bot {
+  height: 10rem; 
+}
+
+.cover-flow-viewport {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.cover-flow-track {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  will-change: transform;
+}
