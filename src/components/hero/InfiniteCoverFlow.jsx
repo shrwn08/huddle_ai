@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import Bot from "../../assets/chatbot.png";
+import botvid from "../../assets/botvid.mp4";
 import LeftChat from "./LeftChat";
 import LeftFeatureCard from "./LeftFeatureCard";
 import AutomationCard from "./AutomationCard";
 import "./InfiniteCoverFlow.css";
 import RightChat from "./RightChat";
+import ChromaKeyVideo from "./ChromaKeyVideo";
 
 function InfiniteCoverFlow() {
   const trackRef = useRef(null);
@@ -44,29 +46,53 @@ function InfiniteCoverFlow() {
     return () => cancelAnimationFrame(frameId);
   }, []);
 
- 
+  return (
+    <>
+      <div className="cover-flow-wrapper  lg:hidden">
+        {/** mobile view*/}
+        <div className="cover-flow-bot-row">
+          <ChromaKeyVideo
+            src={botvid}
+            threshold={235}
+            softness={20}
+            className="w-52 h-60 object-contain"
+          />
+        </div>
 
-  return ( 
-   
-    <div className="cover-flow-wrapper  lg:hidden">
-     {/** mobile view*/}
-      <div className="cover-flow-bot-row">
-        <img src={Bot} alt="bot" className="cover-flow-bot" />
-        
+        <div className="cover-flow-viewport">
+          <div className="cover-flow-track" ref={trackRef}>
+            <LeftChat />
+            <LeftFeatureCard />
+            <AutomationCard />
+            <RightChat />
+          </div>
+        </div>
       </div>
+      <div className="hidden lg:flex w-screen max-w-8xl mx-auto px-8 justify-between items-center">
+        {/*Desktop view*/}
 
-      <div
-        className="cover-flow-viewport"
-        
-      >
-        <div className="cover-flow-track" ref={trackRef}>
+        <div className="relative flex items-center ">
           <LeftChat />
-          <LeftFeatureCard />
-          <AutomationCard />
+          <div className="ml-8 z-10">
+            <LeftFeatureCard />
+          </div>
+        </div>
+        <div className="cover-flow-bot-row">
+          <ChromaKeyVideo
+            src={botvid}
+            threshold={235}
+            softness={20}
+            className="w-60 h-68 object-contain"
+          />
+        </div>
+        <div className="relative flex items-center">
+          <div className="mr-8 z-10">
+            <AutomationCard />
+          </div>
           <RightChat />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
