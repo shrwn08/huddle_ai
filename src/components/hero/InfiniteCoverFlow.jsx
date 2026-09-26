@@ -4,12 +4,13 @@ import LeftChat from "./LeftChat";
 import LeftFeatureCard from "./LeftFeatureCard";
 import AutomationCard from "./AutomationCard";
 import "./InfiniteCoverFlow.css";
+import RightChat from "./RightChat";
 
 function InfiniteCoverFlow() {
   const trackRef = useRef(null);
   const positionRef = useRef(0);
   const isPausedRef = useRef(false);
-  const speed = 40; // pixels per second — increase to go faster
+  const speed = 40; // pixels per second - increase to go faster
 
   useEffect(() => {
     const track = trackRef.current;
@@ -43,32 +44,26 @@ function InfiniteCoverFlow() {
     return () => cancelAnimationFrame(frameId);
   }, []);
 
-  const handleMouseEnter = () => {
-    isPausedRef.current = true;
-  };
+ 
 
-  const handleMouseLeave = () => {
-    isPausedRef.current = false;
-  };
-
-  return (
-    <div className="cover-flow-wrapper">
+  return ( 
+   
+    <div className="cover-flow-wrapper  lg:hidden">
+     {/** mobile view*/}
       <div className="cover-flow-bot-row">
         <img src={Bot} alt="bot" className="cover-flow-bot" />
+        
       </div>
 
       <div
         className="cover-flow-viewport"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        
       >
         <div className="cover-flow-track" ref={trackRef}>
           <LeftChat />
           <LeftFeatureCard />
           <AutomationCard />
-          <LeftChat />
-          <LeftFeatureCard />
-          <AutomationCard />
+          <RightChat />
         </div>
       </div>
     </div>
