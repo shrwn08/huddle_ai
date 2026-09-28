@@ -1,6 +1,5 @@
 import './App.css'
 import Layout from './layout/Layout'
-import Signup from './pages/Signup'
 
 function App() {
 

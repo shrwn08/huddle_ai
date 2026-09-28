@@ -3,9 +3,11 @@ import Logo from "../assets/logo_nobg.png";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Link, useNavigate } from "react-router";
+import botvid from "../assets/botvid.mp4"
 import Chatbot from "../assets/chatbot.png";
 import { signup } from "../redux/features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import ChromaKeyVideo from "../components/hero/ChromaKeyVideo";
 
 function Signup() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -73,7 +75,12 @@ function Signup() {
   return (
     <div className="h-screen w-full flex justify-center items-center sm:justify-between">
       <div className="hidden h-full w-full xl:flex justify-center items-center flex-col">
-        <img src={Chatbot} alt="chatbot" className="bg-transparent h-60" />
+       <ChromaKeyVideo
+            src={botvid}
+            threshold={235}
+            softness={20}
+            className="w-60 h-68 object-contain"
+          />
         <div>
           <p className="text-2xl font-semibold">
             Meet Ashvin - your AI teammate, always in the loop.{" "}

@@ -80,8 +80,8 @@ function BottomHero() {
         <div className="h-8 w-8 mt-1">
           <img src={bot} alt="bot" />
         </div>
-        <div className="h-16 w-44 bg-zinc-300 rounded-b-md p-1.5">
-          <p className="text-sm font-semibold">Ashvin</p>
+        <div className="h-16 w-44 bg-zinc-300 rounded-b-md p-1.5 flex flex-col justify-center items-start">
+          <p className="text-sm font-semibold text-left">Ashvin</p>
           <p className="text-[9px] text-justify">
             Win active chat ground your summarize long treads and create tasks
             from with this concept.
